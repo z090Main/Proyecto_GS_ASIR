@@ -1,0 +1,510 @@
+<!--SLiDER-->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselExampleFade" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/image0.jpg" class="d-block w-100" alt="..." style="height:550px">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/image1.jpg" class="d-block w-100" alt="..." style="height:550px">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/image2.jpg" class="d-block w-100" alt="..." style="height:550px">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+    </a>
+</div>
+
+
+<!-- NEWS CARDS -->
+<div class="card-body Ccard-body">
+  <h3 class="card-title" style="transform: translateY(35px);"><i class="fas fa-percentage"></i>Offers</h3>
+  <br>
+  
+  <!--Offers-->
+  <a href="#" class="more">More <i class="fas fa-angle-double-right"></i></a>
+  <div class="card-group">
+    {{#if offers}}
+    {{#each offers}}
+    <a href="/product/profile/{{id}}">
+      <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px;">
+        <img src="{{path}}" class="card-img-top" style="max-width: 230px; max-height:230px;height:220px">
+        <small class="card-title product_show_title mx-auto"><center>{{price}}€ off {{offers}} <span>%</span></center></small>
+      </div>
+    </a>
+    {{/each}}
+    {{else}}
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">{{price}}€ off {{offers}} <span>%</span></small>
+    </div>
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">{{price}}€ off {{offers}} <span>%</span></small>
+    </div>
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">{{price}}€ off {{offers}} <span>%</span></small>
+    </div>
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">{{price}}€ off {{offers}} <span>%</span></small>
+    </div>
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">{{price}}€ off {{offers}} <span>%</span></small>
+    </div>
+    
+    {{/if}}
+  </div>
+</div>
+<!--Popular-->
+<div class="card-body Ccard-body">
+  <h3 class="card-title" style="transform: translateY(35px);"><i class="fas fa-fire-alt"></i>Popular</h3>
+  <br>
+  <a href="#" class="more">More <i class="fas fa-angle-double-right"></i></a>
+  <div class="card-group">
+    {{#if result}}
+    {{#each result}}
+    <a href="/product/profile/{{id}}">
+      <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px; padding:5px">
+        <img src="{{path}}" class="card-img-top" style="max-width: 230px; max-height:230px;height:220px">
+        <small class="card-title product_show_title" style="max-width:200px">{{title}}</small>
+      </div>
+    </a>
+    {{/each}}
+    {{else}}
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">Something</small>
+    </div>
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">Something</small>
+    </div>
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">Something</small>
+    </div>
+    <div class="card" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px">
+      <img src="img/example.jpg" class="card-img-top" style="max-width: 200px;">
+      <small class="text-muted mx-auto mb-2">Something</small>
+    </div>
+    {{/if}}
+  </div>
+</div>
+<!-- Novelties -->
+
+<div class="card-body Ccard-body">
+  <h3 class="card-title" style="transform: translateY(35px);"><i class="far fa-star"></i>Novelties</h3>
+  <br>
+<center>
+  <table class="novelties" style="transform: translateX(25px);">
+    <tr>
+      <td>
+        <br>
+        <table class="cap1">
+          <h5>
+            <form action="/product/asCs" method="POST">
+              <button type="submit" class="buttons" name="id" value="asCs">Arts & Crafts</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            {{#if art}}
+                {{#each art}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+           <center></center>     <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}
+          </tr>
+        </table>
+      </td>
+      <td class="space"></td>
+
+      <td>
+        <table class="cap1">
+          <br>
+          <h5>
+            <form action="/product/bkCa" method="POST">
+              <button type="submit" class="buttons" name="id" value="bkCa">Books & Cinema</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            <!--Miss Hover-->
+            {{#if book}}
+                {{#each book}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}
+          </tr>
+        </table>
+      </td><center></center>
+
+      <td class="space"></td>
+
+      <td>
+        <table class="cap1">
+          <br>
+          <h5>
+            <form action="/product/PC" method="POST">
+              <button type="submit" class="buttons" name="id" value="PC">Computer</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            {{#if computer}}
+                {{#each computer}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}</center>
+          </tr>
+        </table>
+      </td>
+
+    </tr>
+    <!---->
+  </table><center></center>
+
+  <table class="novelties" style="transform: translateX(25px);">
+    <tr>
+      <td>
+        <table class="cap1">
+          <br>
+          <h5>
+            <form action="/product/elcs" method="POST">
+              <button type="submit" class="buttons" name="id" value="elcs">Electronic</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            {{#if electronic}}
+                {{#each electronic}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}
+          </tr>
+        </table>
+      </td>
+      <td class="space"></td>
+
+      <td>
+        <table class="cap1">
+          <br>
+          <h5>
+            <form action="/product/gnPs" method="POST">
+              <button type="submit" class="buttons" name="id" value="gnPs">Garden & Pets</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            {{#if garden}}
+                {{#each garden}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}
+          </tr>
+        </table>
+      </td>
+
+      <td class="space"></td>
+
+      <td>
+        <table class="cap1">
+          <br>
+          <h5>
+            <form action="/product/stHe" method="POST">
+              <button type="submit" class="buttons" name="id" value="stHe">Smart Home</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            {{#if home}}
+                {{#each home}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}
+          </tr>
+        </table>
+      </td>
+
+    </tr>
+    <!---->
+  </table>
+
+    <table class="novelties" style="transform: translateX(25px);">
+    <tr>
+      <td>
+        <table class="cap1">
+          <br>
+          <h5>
+            <form action="/product/ssOrs" method="POST">
+              <button type="submit" class="buttons" name="id" value="ssOrs">Sports & Outdoors</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            {{#if sport}}
+                {{#each sport}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}
+          </tr>
+        </table>
+      </td>
+      <td class="space"></td>
+
+      <td>
+        <table class="cap1">
+          <br>
+          <h5>
+            <form action="/product/tsBy" method="POST">
+              <button type="submit" class="buttons" name="id" value="tsBy">Toys & Baby</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            {{#if toys}}
+                {{#each toys}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}
+          </tr>
+        </table>
+      </td>
+
+      <td class="space"></td>
+
+      <td>
+        <table class="cap1">
+          <br>
+          <h5>
+            <form action="/product/voGs" method="POST">
+              <button type="submit" class="buttons" name="id" value="voGs">Video Games</button>
+            </form>
+          </h5>
+          <hr>
+          <tr>
+            {{#if game}}
+                {{#each game}}
+                  <td>
+                    <a href="/product/profile/{{id}}">
+                      <img src="{{path}}" class="card-img-top" style="width: 11rem;">
+                      <div class="card-body">
+                      <h6>{{title}}</h6>
+                    </a>
+                  </td>
+                {{/each}}
+            {{else}}
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+              <td>
+                <img src="img/example.jpg" class="card-img-top" style="width: 12rem;">
+                <div class="card-body">
+                <h5>Price</h5>
+              </td>
+            {{/if}}
+          </tr>
+        </table>
+      </td>
+
+    </tr>
+    <!---->
+  </table>
+  </center>
+  <br>
+</div>
+
+<!-- third card -->
+<section class="cards-banner-two">
+  <div class="content">
+    <h2>Lorem, ipsum dolor.</h2>
+    <!-- lorem 30 -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut qui laudantium id quam magni accusantium,
+      veritatis, ipsam labore, reprehenderit dolore repudiandae nemo sint deserunt! Suscipit facilis qui inventore
+      consequatur fugit.</p>
+    <a href="#" class="btn">Learn More <i class="fas fa-chevron-right"></i></a>
+  </div>
+</section>
+
+<div class="card-body Ccard-body">
+  <h3 class="card-title" style="transform: translateY(35px);">Recommend for you</h3>
+  <br>
+  <a href="#" class="more">More <i class="fas fa-angle-double-right"></i></a>
+    <div class="card-group news-cards ">
+      {{#each randown}}
+      <a href="/product/profile/{{id}}">
+        <div class="card p-2" style="margin-top:30px;margin-bottom:40px; margin-left: 10px; max-width:170px;">
+          <img src="{{path}}" class="card-img-top" style="max-width: 230px; max-height:230px;height:220px">
+          <small class="card-title product_show_title mx-auto"><center>{{title}}</center></small>
+        </div>
+      </a>
+      {{/each}}
+    </div>
+</div>
+</div>
+
+<!--CUSTOM JS-->
+<!--<script src="/js/slider.js"></script>-->

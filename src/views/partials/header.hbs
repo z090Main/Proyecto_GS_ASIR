@@ -1,0 +1,63 @@
+<header>
+        <!-- Brand -->
+       <a href="/"> <img src="/img/logo.png" alt="logo" class="nav-brand"> </a>
+        <form action="" class="search">
+            <input type="text" class="search-content" placeholder="Search for anything">
+            <button class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        {{#if user}}
+        <div class="d-flex">
+            <div class="dropdown mr-1 mx-4">
+                <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                    Test
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <a class="dropdown-item" href="#">list</a>
+                    <a class="dropdown-item" href="/users/session/logout">Log Out</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <a href="/users/session" class="session">Sign In/<br>Join</a>
+        <a href="#" class="shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+        
+        {{/if}}
+                
+
+        <!-- Navigation -->
+    
+    </header>
+    <nav class="nav-main">
+        
+        <!-- Left Nav -->
+        <ul class="nav-menu">
+        <li>
+            <a href="#">Jewelry & Accessories</a>
+        </li>
+        <li>
+            <a href="#">Clothing & Shoes</a>
+        </li>
+        <li>
+            <a href="#">Home & Living </a>
+        </li>
+        <li>
+            <a href="#">Wedding & Party</a>
+        </li>
+        <li>
+            <a href="#">Toys & Entertainment</a>
+        </li>
+        <li>
+            <a href="#">Art & Collectibles</a>
+        </li>
+        <li>
+            <a href="#">  Craft Supplies & Tools</a>
+        </li>
+        <li>
+            <a href="#">Vintage</a>
+        </li>
+        </ul>
+    </nav>

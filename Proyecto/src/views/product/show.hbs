@@ -1,0 +1,69 @@
+<div class="container p-4 ">
+    <div class="row">
+        <div class="card col-md-3 p-0" style="margin-left: -10.5rem; height: 500px">
+            <div class="card-header">
+                <h3>Filter</h3>
+            </div>
+            <div class="card-body filter">
+                <form action="/product/{{category_id_send}}" id="filter-form" method="POST">
+                    <input type="hidden" name="retrun_code" value="{{category_id_send}}">
+                    <div>
+                        <select id="brand" class="filter-select spacing" disabled>
+                            Brand
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span>Price: </span> <input type="text" id="min" class="filter-input spacing"><span>-</span><input type="text" id="max" class="filter-input spacing">
+                    </div>
+                    <div>
+                        Order by
+                        <select id="valuation" class="filter-select spacing">
+                            <option selected>Select</option>
+                            <option value="1">valuation</option>
+                            <option value="2">Up time</option>
+                            <option value="3">Visited</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Filter</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col offset-md mt-4">
+
+            <div class="card-group" style="margin:0px">
+                {{#if searchResult}}
+                    {{#each searchResult}}
+                    <div class="card animated fadeInDown product_show" style="max-width: 200px; margin:3px">
+                        <a href="/product/profile/{{id}}" style="text-decoration: none;">
+                            <img src="{{path}}" class="card-img-top">
+                            <div class="card-body product_card">
+                                <h5 class="card-title product_show_title" id="tyu">{{title}}</h5>
+                                <p class="card-text product_show_description">{{description}}</p>
+                                <p class="card-text text-right">{{price}}<i class="fas fa-euro-sign"></i></p>
+                            </div>
+                        </a>
+                    </div>
+                    {{/each}}
+                {{else}}
+                    {{#each products_result}}
+                    <div class="card animated fadeInDown product_show" style="max-width: 200px; margin:5px">
+                        <a href="/product/profile/{{id}}" style="text-decoration: none;">
+                            <img src="{{path}}" class="card-img-top">
+                            <div class="card-body product_card">
+                                <h5 class="card-title product_show_title" id="tyu">{{title}}</h5>
+                                <p class="card-text product_show_description">{{description}}</p>
+                                <p class="card-text text-right">{{price}}<i class="fas fa-euro-sign"></i></p>
+                            </div>
+                        </a>
+                    </div>
+                    {{/each}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

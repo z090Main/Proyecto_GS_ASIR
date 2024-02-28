@@ -1,0 +1,142 @@
+<h1>profile</h1>
+<h2>WellCome
+    {{#each user_result}}
+    <b>{{name}}</b>
+    {{/each}}
+</h2>
+<div class="row">
+    <div class="" style="width: 200px;">
+        <div class="list-group" id="list-tab" role="tablist">
+
+            <a class="list-group-item list-group-item-action active" id="list-profile-list" data-toggle="list"
+                href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+            {{#each user_result}}
+            {{#if is_seller}}
+            <a class="list-group-item list-group-item-action" id="list-myProduct-list" data-toggle="list"
+                href="#list-myProduct" role="tab" aria-controls="myProduct">My product</a>
+            <a class="list-group-item list-group-item-action" href="/product/upload">Up product</a>
+            {{/if}}
+            {{/each}}
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+            <!--Shopping Cart-->
+            <a class="list-group-item list-group-item-action"
+                href="/user/shopping_cart" role="tab" aria-controls="Cart">Cart</a>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="list-profile" role="tabpanel"
+                aria-labelledby="list-profile-list">
+                {{#each user_result}}
+                <div class="row-md-5">
+                    <div class="card-header">
+                        User Datas
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><B>Email :  </B>{{email}}</li>
+                            <li class="list-group-item">
+                                <B>Phone: </B>{{#if phone}}
+                                {{phone}}
+                                {{else}}
+                                null
+                                {{/if}}
+                            </li>
+                            <li class="list-group-item">
+                                <B>Address: </B>{{#if address}}
+                                {{address}}
+                                {{else}}
+                                null
+                                {{/if}}
+                            </li>
+                            <li class="list-group-item">
+                                <B>Country:</B>
+                                {{country}}
+                            </li>
+                            <li class="list-group-item">
+                                <B>Create At:</B>
+                                {{create_at}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+            <!--My product list-->
+            <div class="tab-pane fade" id="list-myProduct" role="tabpanel" aria-labelledby="list-myProduct-list">
+                <div class="container p-4">
+                    <div class="row row-cols-1 row-cols-md-5 g-4">
+                        {{#if products_result}}
+                        {{#each products_result}}
+                        <div class="col">
+                            <div class="card">
+                                <img src="{{ path }}" class="card-img-top" style="height: 200px;">
+                                <div class="card-body">
+                                    <h5 class="card-title product_show_title">{{title}}</h5>
+                                    <p class="card-text product_show_description">{{description}}</p>
+                                    <p class="card-text text-right">{{price}}<i class="fas fa-euro-sign"></i></p>
+                                    <a href="/product/edit/{{id}}" class="btn btn-primary">
+                                        Edit
+                                    </a>
+                                    <a href="/product/{{id}}/delete" class="btn btn-danger">
+                                        Delete
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{else}}
+                            <div class="card mx-auto" style="width: 18rem;">
+                            <div class="card-body">
+                                <h4 class="card-title">You still have no sales</h4>
+                                <a href="/product/upload" class="btn btn-primary">Add new sales</a>
+                            </div>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        <!--Chat-->
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                <div class="container" id="contentWrap">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-1 mt-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <g4> lets Chat</g4>
+                                </div>
+                                <div id="chat" class="card-body"></div>
+                                <form id="message-form" class="card-footer">
+                                    <input type="hidden" id="email" value=" {{name}} ">
+                                    <div class="input-group">
+                                        <input type="text" id="message" class="form-control" autofocus>
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-warning">
+                                                <i class="fas fa-location-arrow"></i>
+                                                Send
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--End Chat-->
+
+        <!--Setting-->
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                Setting
+            </div>
+        <!--End Setting-->
+
+        </div>
+    </div>
+</div>

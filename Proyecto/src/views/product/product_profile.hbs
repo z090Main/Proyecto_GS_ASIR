@@ -1,0 +1,107 @@
+{{#each products_result}}
+<div class="card mb-3 " style="max-width: 100%; height: auto;">
+  <!--visit count-->
+  <form id="contador">
+    <input type="hidden" id="count" value="1">
+    <input type="hidden" id="productID" value="{{id}}">
+  </form>
+
+  <!--content-->
+  <div class="row no-gutters back">
+    <div class="col-md-3.7" style="left: 50px;">
+      <img src="{{path}}" class="card-img product-img">
+    </div>
+    <div class="product_infomration">
+      <div class="card-body product_size" style="width: 140%; height:250px;">
+        <div class="product_content">
+          <h1 class="card-title product_title">{{title}}</h1>
+          <p class="card-text product_description">{{description}}</p>
+          <p class="card-text text-right productPrice">{{price}}<i class="fas fa-euro-sign"></i></p>
+          <form action="/user/addCart" method="POST">
+            <input type="hidden" name="productID" value="{{id}}">
+            <input type="hidden" name="quantity" value="1">
+            <div class="buttons">
+              <button type="submit" class="btn btn-success" value="add">Add to cart</button>
+              <button type="button" class="btn btn-danger" value="buy">Buy Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Views && Product IMG-->
+    <div class="product_additional_information">
+      <div class="additional_information">
+        <div class="card">
+          <div class="card-body">
+            <span>More Information</span>
+            <div class="add_img">
+              <img src="/img/Default/No_Image_Available.jpg" alt="">
+            </div>
+            <div class="add_img">
+              <img src="/img/Default/No_Image_Available.jpg" alt="">
+            </div>
+            <div class="add_img">
+              <img src="/img/Default/No_Image_Available.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="views">
+        <div class="card">
+          <div class="card-body">
+            <span>Views</span>
+            <hr>
+            <div class="content">
+              <div class="viewsoutput">
+                <ul>
+                  <li>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Accordion Item #1
+                          </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Accordion Item #2
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Accordion Item #3
+                          </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Comments</label>
+              <button type="button" class="btn btn-success">Success</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{/each}}

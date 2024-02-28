@@ -1,0 +1,44 @@
+<h2>{{email}}</h2>
+<form action="/user/shop" method="post">
+<div class="row row-cols-1 row-cols-md-5 g-4 justify-content-center">
+    
+    {{#each result}}
+        <input type="hidden" name="{{id}}" value="{{price}}">
+        <div class="col">
+            <div class="card h-100">
+                <center><img src="{{ path }}" class="card-img-top" style="width: 200px; height:250px; margin-top:2px"></center>
+                <div class="card-body m">
+                    <h5 class="card-title" style="height: 100px;">{{ title }}</h5>
+                    <p class="card-text text-right">{{price}}<i class="fas fa-euro-sign"></i> <input type="checkbox" name="" id="" checked></p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <label for="quantity"><b>Quantity</b></label>
+                        <input type="number" name="quantity" id="quantity" value={{quantity}} style="width: 50px; margin-right:40px;" disabled>
+                        <a href="/user/shopping_cart/{{id}}/delete" class="btn btn-danger">
+                            Delete
+                        </a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<button type="submit">Buy Now</button>
+</form>
+<br>
+<nav aria-label="...">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+        </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item" aria-current="page">
+            <span class="page-link">2</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>

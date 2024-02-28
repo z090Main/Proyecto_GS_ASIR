@@ -1,0 +1,61 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <form action="/product/upload" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="text" name='title' class="form-control" placeholder="Title" {{#if title}} value="{{title}}" {{/if}}>
+                        </div>
+                        <div class="input-group mb-3 m-2">
+                            <div class="custom-file">
+                                <input type="file" class="form-control" name="image" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload" required>                                    
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="category">category</label>
+                            <select name="category" class="form-control">
+                                <option selected>
+                                    {{#if sCategory}} 
+                                        {{sCategory}} 
+                                    {{else}}
+                                        Choose...
+                                    {{/if}}
+                                </option>
+                                {{#if category}}
+                                    {{#each category}}
+                                        <option>{{name}}</option>
+                                    {{/each}}
+                                {{else}}
+                                    {{#each li_category}}
+                                        <option>{{name}}</option>
+                                    {{/each}}
+                                {{/if}}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group flex-nowrap">
+                                <input type="text" name="price" class="form-control" placeholder="Price in EURO" {{#if price}} value="{{price}}" {{/if}}>
+                                <span class="input-group-text">€</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="description" class="form-control" placeholder="description">{{#if description}}{{description}}{{/if}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-block">
+                                Upload
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
